@@ -18,7 +18,6 @@ export class PostsController {
   @GrpcMethod('PostsService', 'GetPost')
   async getPost(data: { id: number }): Promise<PostRes> {
     const post = await this.postService.getPost(data.id);
-    console.log(post);
     return { post };
   }
 
